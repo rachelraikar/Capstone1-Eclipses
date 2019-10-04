@@ -128,7 +128,7 @@ Analysis of the trends of solar and lunar eclipses.
                           |  Total Solar (yrs)  |  Total Lunar (yrs)  |
     Linear Regression     |        4.8          |         5.4         |
     Lasso Regression      |        4.8          |         5.3         | 
-    Ridge Regression      |        4.           |         5.3         |
+    Ridge Regression      |        4.9          |         5.3         |
     Polynomial Regression |        4.6          |         4.4         |
     Bayesian Regression   |        4.8          |         5.4         |
 
