@@ -48,6 +48,8 @@ Analysis of the trends of solar and lunar eclipses.
 
     Total solar eclipses seem to veer off this trend greatly. They seem to be more common during the second 
     half of the year during the seasons Fall and Winter (September - January). 
+![TotalLunarCount](https://user-images.githubusercontent.com/40244616/66281728-6bdb6680-e871-11e9-9446-77fda9bf57fd.png)
+![TotalSolarCount](https://user-images.githubusercontent.com/40244616/66281729-6f6eed80-e871-11e9-8289-fe947a866b35.png)
 
 ## Statistical Analysis
     Group 1: September - February (Fall - Winter according to US seasons)
@@ -65,6 +67,8 @@ Analysis of the trends of solar and lunar eclipses.
      Therefore rejecting null hypothesis and showing that total solar eclipses might be correlated to the
      months in the year
 
+<img width="628" alt="Screen Shot 2019-10-06 at 7 45 26 PM" src="https://user-images.githubusercontent.com/40244616/66281823-e1dfcd80-e871-11e9-9576-2e24755e55e5.png">
+
 
 #### Statistical Analysis of Total Lunar Eclipse
     Confidence Interval: [-0.01149  0.01149]
@@ -73,6 +77,7 @@ Analysis of the trends of solar and lunar eclipses.
     Therefore accepting null hypothesis and showing that total lunar eclipses are not directly correlated to 
     the months in the year
 
+<img width="618" alt="Screen Shot 2019-10-06 at 7 45 16 PM" src="https://user-images.githubusercontent.com/40244616/66281827-e3a99100-e871-11e9-8c68-cc574797461d.png">
 
 ## Machine Learning Analysis
 
