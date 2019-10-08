@@ -1,6 +1,14 @@
 # Capstone1-Eclipses
 Analysis of the trends of solar and lunar eclipses.
 
+## Table of Contents
+
+* [Project Outline](#project-outline)
+* [Data Wrangling](#data-wrangling)
+* [Data Analysis](#data-analysis)
+* [Statistical Analysis](#statistical-analysis)
+* [Machine Learning Predictions](#machine-learning-analysis)
+
 ## Project Outline
 
 #### Problem Definition
