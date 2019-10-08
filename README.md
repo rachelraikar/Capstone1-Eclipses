@@ -12,28 +12,28 @@ Analysis of the trends of solar and lunar eclipses.
 ## Project Outline
 
 #### Problem Definition
-    * Study the frequency of occurrence of eclipses and determine which eclipses are more common.
-    * Study the correlation between time of year and occurrence of eclipses.
+* Study the frequency of occurrence of eclipses and determine which eclipses are more common.
+* Study the correlation between time of year and occurrence of eclipses.
 #### Client Base and Motivation
-    Astronomers to statistically confirm their theories about the occurrences of eclipses.
+Astronomers to statistically confirm their theories about the occurrences of eclipses.
     
 #### Data Overview
-    * Acquired from NASA public dataset domain.
-    * Two separate CSV files with data pertaining to solar and lunar eclipses respectively.
+* Acquired from NASA public dataset domain.
+* Two separate CSV files with data pertaining to solar and lunar eclipses respectively.
     
 ## Data Wrangling
-    * Imported CSV files as PANDAS dataframes and reindexed the rows with the column ‘Catalog number’.
-    * Filtered the data frames to contain only relevant columns:
-      * Solar Eclipses Data Frame
+* Imported CSV files as PANDAS dataframes and reindexed the rows with the column ‘Catalog number’.
+* Filtered the data frames to contain only relevant columns:
+   * Solar Eclipses Data Frame
       'Calendar Date', 'Eclipse Time', 'Delta T (s)', 'Eclipse Type','Eclipse Magnitude', 'Latitude', 'Longitude', 'Sun Altitude',    'Sun Azimuth',  'Path Width (km)', 'Central Duration'
-      *  Lunar Eclipses Data Frame
+   *  Lunar Eclipses Data Frame
         'Calendar Date', 'Eclipse Time', 'Delta T (s)','Eclipse Type', 'Latitude', 'Longitude',  'Penumbral Eclipse Duration (m)', 
         'Partial Eclipse Duration (m)','Total Eclipse Duration (m)'
-    * Reorganized data by calendar date in Chronological order
-    * Converted the dates into a list of [year, month, day] for easier analysis of trends.
-    * Note: The years have negative values because the data is during the five millennium period -1999 to +3000 (2000 BCE to 3000 CE).
+* Reorganized data by calendar date in Chronological order
+* Converted the dates into a list of [year, month, day] for easier analysis of trends.
+* Note: The years have negative values because the data is during the five millennium period -1999 to +3000 (2000 BCE to 3000 CE).
 
-    * Missing values appearing as ‘-’ were replaced with NAN values.
+* Missing values appearing as ‘-’ were replaced with NAN values.
 
 
 ## Data Story
@@ -99,50 +99,51 @@ Analysis of the trends of solar and lunar eclipses.
 ### Regression Models Tested
 
 #### Linear Regression
-    * Model that uses ordinary least squares to minimize the sum of square differences from prediction from true value.
-    * The data was split into ordered train and test sets to keep the dates of the data in order.
-       * Train = 0.75 Test = 0.25
-    * Fitted the training data to linear regression model and predicted the model on testing data. 
+* Model that uses ordinary least squares to minimize the sum of square differences from prediction from true value.
+* The data was split into ordered train and test sets to keep the dates of the data in order.
+   * Train = 0.75 Test = 0.25
+* Fitted the training data to linear regression model and predicted the model on testing data. 
 
 #### Ridge Regression
-    * Model similar to linear regression but with a normalization term to reduce overfitting. 
-    * The data was split into ordered train and test sets to keep the dates of the data in order.
-     * Train = 0.75 Test = 0.25
-    * Performed GridSearchCV to find the best alpha parameter for the model and cross validation of 5.
-    * Plotted the alphas vs the cross validation of 10 scores for each alpha for visual analysis.
-    * Fitted the training data to ridge regression model and predicted the model on testing data. 
+* Model similar to linear regression but with a normalization term to reduce overfitting. 
+* The data was split into ordered train and test sets to keep the dates of the data in order.
+   * Train = 0.75 Test = 0.25
+* Performed GridSearchCV to find the best alpha parameter for the model and cross validation of 5.
+* Plotted the alphas vs the cross validation of 10 scores for each alpha for visual analysis.
+* Fitted the training data to ridge regression model and predicted the model on testing data. 
 
 #### Lasso Regression
-    * Model similar to ridge regression but uses absolute values instead of squares to penalize regression coefficients 
-    from becoming too large. 
-    * The data was split into ordered train and test sets to keep the dates of the data in order.
-      * Train = 0.75 Test = 0.25
-    * Performed GridSearchCV to find the best alpha parameter for the model and cross validation of 5.
-    * Plotted the alphas vs the cross validation of 10 scores for each alpha for visual analysis.
-    * Fitted the training data to lasso regression model and predicted the model on testing data. 
+* Model similar to ridge regression but uses absolute values instead of squares to penalize regression coefficients 
+from becoming too large. 
+* The data was split into ordered train and test sets to keep the dates of the data in order.
+   * Train = 0.75 Test = 0.25
+* Performed GridSearchCV to find the best alpha parameter for the model and cross validation of 5.
+* Plotted the alphas vs the cross validation of 10 scores for each alpha for visual analysis.
+* Fitted the training data to lasso regression model and predicted the model on testing data. 
 
 #### Polynomial Linear Regression
-    * Model similar to linear regression but y is modelled using an nth degree polynomial for x instead.
-    * The data was split into ordered train and test sets to keep the dates of the data in order.
-      * Train = 0.75 Test = 0.25
-    * Performed a manual gridsearch to test for the best degree parameter for the Polynomial Features. Best degree = 4
-    * Fitted the training data to polynomial regression model and predicted the model on testing data. 
+* Model similar to linear regression but y is modelled using an nth degree polynomial for x instead.
+* The data was split into ordered train and test sets to keep the dates of the data in order.
+   * Train = 0.75 Test = 0.25
+* Performed a manual gridsearch to test for the best degree parameter for the Polynomial Features. Best degree = 4
+* Fitted the training data to polynomial regression model and predicted the model on testing data. 
 
 #### Bayesian Linear Regression
-    * Model similar to linear regression but the model is made with probabilities rather than point estimates.
-    * Performed GridSearchCV to find the best alpha and lambda parameters for the model with cross validation of 5.
-    * Fitted the training data to bayesian regression model and predicted the model on testing data. 
+* Model similar to linear regression but the model is made with probabilities rather than point estimates.
+* Performed GridSearchCV to find the best alpha and lambda parameters for the model with cross validation of 5.
+* Fitted the training data to bayesian regression model and predicted the model on testing data. 
 
 
 ### Results for the Models
 
   Below are the Root Mean Square Errors (RMSE) computed for total solar and total lunar eclipses for each model.
-  
-                          |  Total Solar (yrs)  |  Total Lunar (yrs)  |
-    Linear Regression     |        4.8          |         5.4         |
-    Lasso Regression      |        4.8          |         5.3         | 
-    Ridge Regression      |        4.9          |         5.3         |
-    Polynomial Regression |        4.6          |         4.4         |
-    Bayesian Regression   |        4.8          |         5.4         |
+
+| Model|Total Solar (yrs)|Total Lunar (yrs)|
+| ------------- | :-------------: | :-------------: | 
+|Linear Regression     |        4.8          |         5.4         |
+|Lasso Regression      |        4.8          |         5.3         | 
+|Ridge Regression      |        4.9          |         5.3         |
+|Polynomial Regression |        4.6          |         4.4         |
+|Bayesian Regression   |        4.8          |         5.4         |
 
 
