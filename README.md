@@ -3,12 +3,20 @@ Analysis of the trends of solar and lunar eclipses.
 
 ## Table of Contents
 
+* [Files in Repository](#files-in-repository)
 * [Project Outline](#project-outline)
 * [Data Wrangling](#data-wrangling)
 * [Data Analysis](#data-analysis)
 * [Statistical Analysis](#statistical-analysis)
 * [Machine Learning Predictions](#machine-learning-analysis)
 
+## Files in Repository
+
+* Report Separate Sections Folder - folder containing sections of final report as separate pdf files:
+    * Data Wrangling, Data Storytelling, Statistical Analysis, Machine Learning Analysis
+* Capstone 1: Milestone Report - pdf containing full report of project details
+* Solar and Lunar Eclipse Milestone Report.pptx - Powerpoint summary of project 
+* solar.csv & lunar.csv - data used for analysis in project
 ## Project Outline
 
 #### Problem Definition
