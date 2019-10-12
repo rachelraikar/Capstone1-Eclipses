@@ -17,6 +17,8 @@ Analysis of the trends of solar and lunar eclipses.
 * Capstone 1: Milestone Report - pdf containing full report of project details
 * Solar and Lunar Eclipse Milestone Report.pptx - Powerpoint summary of project 
 * solar.csv & lunar.csv - data used for analysis in project
+* Solar-and-Lunar-Eclipse-Capstone.ipynb - python notebook of code
+
 ## Project Outline
 
 #### Problem Definition
